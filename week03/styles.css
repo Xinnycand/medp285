@@ -1,0 +1,44 @@
+body {
+font-family: "handjet", sans-serif;
+font-optical-sizing: auto;
+font-weight: 500;
+font-style: normal;
+font-variation-settings: 
+    "ELGR" 1,
+    "ELSH" 2;
+    background-image: url("images/walll.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+#wrapper {
+    background-color: cornflowerblue;
+    padding: 40px;
+    width: 60%;
+    margin: 100px auto 100px auto;
+}
+
+/*NAVIGATION BAR STYLES*/
+NAV {
+    background-color: antiquewhite;
+    padding: 20px;
+    text-align: center;
+}
+
+nav a {
+    margin: 0px 10px 0px 10px;
+}
+
+img.enlargement {
+    height: 200;
+    width: auto;
+}
+
+img.thumbnail {
+    height: 80px;
+    width: auto;
+}
+
+
+
+
