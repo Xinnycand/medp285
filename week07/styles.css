@@ -1,0 +1,71 @@
+/* START border-box fix */
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  /* END border-box fix */
+
+body {
+    font-family:'Courier New', Courier, monospace;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5 {
+    text-transform: uppercase;
+}
+
+.container > * {
+    padding: 20px;
+}
+
+.container {
+    display: flex; /* use flex box */
+    flex-wrap: wrap; /* allows wrapping of flex items */
+}
+
+header {
+    background: rgb(232, 236, 165);
+    flex: 1 0 100%; /* grow on, shrink off, basis width of browser */
+    order: 1; /* display order regardless of html structure */
+}
+  
+  main {
+    background: rgb(118,182,196);
+    flex: 1 1 500px; /* allow to grow and shrink with remaining space 
+    of total 900px, when container is larger than 900, extra space is 
+    distributed evenly, when smaller, items will wrap to next line in 
+    order to maintain the basis */
+    order: 3;
+}
+  
+  nav {
+    background: rgb(127,205,255);
+    flex: 1 0 200px; /* grow but do not shrink less than basis */
+    order: 2;
+}
+  
+  aside {
+    background: rgb(74, 110, 145);
+    flex: 1 0 200px; /* grow but do not shrink less than basis */
+    order: 4;
+}
+  
+  footer {
+    background: rgb(6,66,115);
+    flex: 1 0 100%; /* grow on, shrink off, basis width of browser */
+    order: 5;
+}
+
+.resize {
+    width: 400px;
+    height: 400px;
+}
+
+.resize2 {
+  width: 350px;
+  height: 350px;
+}
