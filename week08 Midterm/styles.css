@@ -1,0 +1,139 @@
+/* START border-box fix */
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  /* END border-box fix */
+
+body {
+    font-family:'Courier New', Courier, monospace;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5 {
+    text-transform: uppercase;
+}
+
+.container > * {
+    padding: 20px;
+}
+
+.container {
+    display: flex; /* use flex box */
+    flex-wrap: wrap; /* allows wrapping of flex items */
+}
+
+header {
+    background: rgb(232, 236, 165);
+    flex: 1 0 100%; /* grow on, shrink off, basis width of browser */
+    order: 1; /* display order regardless of html structure */
+}
+  
+  main {
+    background: rgb(118,182,196);
+    flex: 1 1 500px; /* allow to grow and shrink with remaining space 
+    of total 900px, when container is larger than 900, extra space is 
+    distributed evenly, when smaller, items will wrap to next line in 
+    order to maintain the basis */
+    order: 3;
+}
+  
+  nav {
+    background: rgb(127,205,255);
+    flex: 1 0 200px; /* grow but do not shrink less than basis */
+    order: 2;
+}
+  
+  aside {
+    background: rgb(74, 110, 145);
+    flex: 1 0 200px; /* grow but do not shrink less than basis */
+    order: 4;
+}
+  
+  footer {
+    background: rgb(6,66,115);
+    flex: 1 0 100%; /* grow on, shrink off, basis width of browser */
+    order: 5;
+}
+
+.resize {
+    width: 400px;
+    height: 400px;
+}
+
+.resize2 {
+  width: 350px;
+  height: 350px;
+}
+
+.resize3 {
+  width: 200px;
+  height: 200px;
+}
+
+.resize {
+  position: relative;
+  animation-name: group;
+  animation-duration: 16s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes group {
+  0%   {left:1500px; top:100px;}
+  10%  {left:1700px; top:300px;}
+  20%  {left:1550px; top:550px;}
+  30%  {left:1200px; top:700px;}
+  40%  {left:850px; top:900px;}
+  50%  {left:600px; top:1200px;}
+  60%  {left:200px; top:1300px;}
+  70%  {left:500px; top:900px;}
+  80%  {left:800px; top:500px;}
+  90%  {left:1250px; top:200px;}
+  100% {left:1500px; top:100px;}
+}
+
+.resize2 {
+  position: relative;
+  animation-name: group1;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes group1 {
+  0%   {left:0px; top:0px;}
+  10%  {left:300px; top:150px;}
+  20%  {left:500px; top:350px;}
+  30%  {left:750px; top:500px;}
+  40%  {left:900px; top:650px;}
+  50%  {left:1000px; top:950px;}
+  60%  {left:800px; top:700px;}
+  70%  {left:500px; top:350px;}
+  80%  {left:350px; top:200px;}
+  90%  {left:100px; top:50px;}
+  100% {left:0px; top:0px;}
+}
+
+.resize3 {
+  position: relative;
+  animation-name: group2;
+  animation-duration: 14s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes group2 {
+  0%   {left:300px; top:400px;}
+  10%  {left:700px; top:200px;}
+  20%  {left:950px; top:50px;}
+  30%  {left:1100px; top:400px;}
+  40%  {left:1050px; top:700px;}
+  50%  {left:700px; top:950px;}
+  60%  {left:600px; top:1050px;}
+  70%  {left:450px; top:1200px;}
+  80%  {left:250px; top:950px;}
+  90%  {left:100px; top:700px;}
+  100% {left:300px; top:400px;}
+}
